@@ -1,23 +1,21 @@
-(function(){
-  var root=document.documentElement;
-  var tb=document.querySelector('.theme-btn');
-  tb&&tb.addEventListener('click',function(){
-    var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme=dark?'light':'dark';
-    try{localStorage.setItem('theme',root.dataset.theme);}catch(e){}
-  });
-  var mb=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
-  mb&&mb.addEventListener('click',function(){
-    var o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o);
-  });
-  menu&&menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');mb.setAttribute('aria-expanded','false');}});
-  var lb=document.querySelector('.lightbox');
-  if(lb&&lb.showModal){
-    var img=lb.querySelector('img');
-    document.querySelectorAll('.zoom').forEach(function(b){
-      b.addEventListener('click',function(){var i=b.querySelector('img');img.src=b.dataset.src;img.alt=i.alt;lb.showModal();});
+(() => {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".site-nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      toggle.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+      nav.classList.toggle("is-open", !expanded);
     });
-    lb.querySelector('.lb-close').addEventListener('click',function(){lb.close();});
-    lb.addEventListener('click',function(e){if(e.target===lb)lb.close();});
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation");
+        nav.classList.remove("is-open");
+      });
+    });
   }
+  const year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
 })();
