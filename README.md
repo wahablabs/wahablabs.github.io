@@ -1,32 +1,33 @@
-# wahablabs.github.io
+# EVL Tech — Website
 
-Personal portfolio website of **Abdul Wahab**, WordPress developer (Elementor, WooCommerce, site fixes & security) and founder of AWL Solutions.
+Official static website for EVL Tech, an independent technology initiative focused on:
 
-**Live site:** https://wahablabs.github.io
+- AI automation and business workflow integration
+- Task-focused agentic AI implementation
+- Cybersecurity reviews, hardening, and security guidance
 
-## What's on the site
+## Site files
 
-- Services: Elementor websites, WooCommerce stores, bug fixes and responsiveness, speed optimisation, WordPress security, DevOps/AWS
-- Case studies with before, during and after screenshots: Harbor Plumbing, Northline Apparel, Olive & Ember Bistro (self-initiated projects for fictional businesses)
-- DevOps projects, work process, about and contact
+- \`index.html\` — page content and metadata
+- \`assets/style.css\` — responsive styling
+- \`assets/main.js\` — mobile navigation and dynamic copyright year
+- \`assets/favicon.svg\` — EVL Tech site icon
+- \`robots.txt\` and \`sitemap.xml\` — crawl configuration
 
-## Tech
+## Deployment
 
-Plain HTML, CSS and a few lines of vanilla JavaScript. No framework and no build step.
-Light and dark themes (follows the system setting, with a toggle), responsive layout, accessible markup, SEO and Open Graph tags.
-Hosted on GitHub Pages from the `main` branch.
+This is a static website with no build step or package dependencies.
 
-```
-index.html         page content
-assets/style.css   styles
-assets/main.js     theme toggle, mobile menu, image preview
-assets/img/        optimised screenshots
-```
+**GitHub Pages:** publish from the \`main\` branch and repository root.
 
-To preview locally: `python3 -m http.server` in this folder, then open http://localhost:8000.
+**Cloudflare Pages:** connect this repository, use \`main\` as the production branch, leave the build command empty, and set the output directory to \`/\` (or \`.\` if the dashboard requires a relative path).
 
-## Contact
+## Contact and launch notes
 
-Hire me on [Upwork](https://www.upwork.com/freelancers/~01070211c5bbfca5e8).
+The site currently links to the public GitHub profile because a dedicated EVL Tech business email has not yet been configured. Add the official business email and company social links when they are ready.
 
-© 2026 Abdul Wahab · AWL Solutions
+The canonical URL and sitemap currently use:
+
+https://wahablabs.github.io/
+
+Update the canonical metadata, Open Graph URL, and sitemap if the primary domain changes.
